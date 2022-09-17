@@ -2,22 +2,22 @@ import React from "react";
 import styles from "./styles.module.css";
 
 const Form = ({ data, handleInput, formdata }) => {
-  const location =
+  const locations =
     data && data[0] ? data[0]?.properties?.formatted : "No address";
 
   const handleForm = (e) => {
     e.preventDefault();
-    const { firstname, lastname, jobposition, jobtitle, companyname } =
+    const { name, job, location, } =
       formdata;
 
-    const message = `FirstName: ${firstname}\nLastName: ${lastname}\nCompany:${companyname}\nPosition:${jobposition}\nTitle:${jobtitle}\nYour Location:${location}\n\nSubmission Successful`;
+    const message = `Name: ${name}\nJob:${job}\nLocation:${location}\nYour Location:${locations}\n\nSubmission Successful`;
 
-    if (location !== "No address") {
-      console.log(location);
-      if (firstname && lastname && jobtitle) {
+    if (locations !== "No address") {
+
+      if (name && job && location) {
         alert(message);
       } else {
-        alert("First Name, Last Name and Job Title are required.");
+        alert("Name, Job and Location are required.");
       }
     } else {
       alert("Please enable location to submit form");
@@ -30,13 +30,13 @@ const Form = ({ data, handleInput, formdata }) => {
           <div>
             <input
               type={"text"}
-              placeholder="First Name"
+              placeholder="Name"
               className={styles.Input}
-              name="firstname"
+              name="name"
               onChange={handleInput}
             />
           </div>
-          <div>
+          {/* <div>
             <input
               type={"text"}
               placeholder="Last Name"
@@ -44,26 +44,26 @@ const Form = ({ data, handleInput, formdata }) => {
               name="lastname"
               onChange={handleInput}
             />
-          </div>
+          </div> */}
           <div>
             <input
               type={"text"}
-              placeholder="Job Position"
+              placeholder="Job"
               className={styles.Input}
-              name="jobposition"
+              name="job"
               onChange={handleInput}
             />
           </div>
           <div>
             <input
               type={"text"}
-              placeholder="Job Title"
+              placeholder="Location"
               className={styles.Input}
-              name="jobtitle"
+              name="location"
               onChange={handleInput}
             />
           </div>
-          <div>
+          {/* <div>
             <input
               type={"text"}
               placeholder="Company Name"
@@ -71,7 +71,7 @@ const Form = ({ data, handleInput, formdata }) => {
               name="companyname"
               onChange={handleInput}
             />
-          </div>
+          </div> */}
           <button className={styles.Btn}>Submit</button>
         </form>
       </div>

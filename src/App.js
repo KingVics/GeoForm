@@ -9,9 +9,9 @@ function App() {
   const [state, setState] = useState({
     lat: null,
     long: null,
-    firstname: "",
-    lastname: "",
-    jobposition: "",
+    name: "",
+    job: "",
+    location: "",
     jobtitle: "",
     companyname: "",
   });
@@ -78,8 +78,8 @@ function App() {
     }));
   };
 
-  const { firstname, lastname, jobposition, jobtitle, companyname } = state;
-  const formdata = { firstname, lastname, jobposition, jobtitle, companyname };
+  const { name, job, location} = state;
+  const formdata = { name, job, location };
   return (
     <>
       <Header />

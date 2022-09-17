@@ -44,6 +44,16 @@
   -moz-box-shadow: 4px 1px 35px -3px rgba(202, 194, 194, 0.32);
 }
 
+@media screen and (max-width: 560px) {
+  .Form {
+    margin: 10px;
+  }
+  .Container {
+    width: 100%;
+    margin: max(4rem, 1vh) auto;
+  }
+}
+
 .Container form {
   padding: 30px 25px;
   height: 100%;
