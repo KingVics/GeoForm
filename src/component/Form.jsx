@@ -12,16 +12,16 @@ const Form = ({ data, handleInput, formdata }) => {
 
     const message = `FirstName: ${firstname}\nLastName: ${lastname}\nCompany:${companyname}\nPosition:${jobposition}\nTitle:${jobtitle}\nYour Location:${location}\n\nSubmission Successful`;
 
+    if (location !== "No address") {
+      console.log(location);
       if (firstname && lastname && jobtitle) {
-            if (location !== "No address") {
-              alert(message);
-            } else {
-              alert("Please enable location to submit form");
-            }
+        alert(message);
       } else {
-          alert('First Name, Last Name and Job Title are required.')
+        alert("First Name, Last Name and Job Title are required.");
       }
-  
+    } else {
+      alert("Please enable location to submit form");
+    }
   };
   return (
     <section className={styles.Form}>
